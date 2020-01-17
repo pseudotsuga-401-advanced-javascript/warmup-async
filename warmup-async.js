@@ -22,4 +22,20 @@ function fetchPeopleWithPromises(){
   .catch((err) => console.error(err))
 }
 
-fetchPeopleWithPromises();
+// fetchPeopleWithPromises();
+
+async function fetchPeopleWithAsync(){
+  const fullResponse = await superagent.get(url);
+  const personList = fullResponse.body.results;
+  const URLArray = personList.map(object => object.url);
+  const individualPersonAccess = URLArray.map(oneURL => superagent.get(oneURL));
+  Promise.all(individualPersonAccess)
+  .then(result => {
+    result.forEach(response => {
+      console.log(response.body.name);
+    })
+  })
+  .catch(err => console.error(err));
+}
+
+fetchPeopleWithAsync();
