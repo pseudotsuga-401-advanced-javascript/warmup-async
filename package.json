@@ -1,0 +1,23 @@
+{
+  "name": "warmup-async",
+  "version": "1.0.0",
+  "description": "Practice with asynchronous functions in JavaScript.",
+  "main": "warmup-async.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pseudotsuga-401-advanced-javascript/warmup-async.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pseudotsuga-401-advanced-javascript/warmup-async/issues"
+  },
+  "homepage": "https://github.com/pseudotsuga-401-advanced-javascript/warmup-async#readme",
+  "dependencies": {
+    "superagent": "^5.2.1"
+  }
+}
