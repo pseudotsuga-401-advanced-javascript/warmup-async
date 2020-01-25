@@ -15,8 +15,14 @@ function fetchPeopleWithPromises(){
       })
     })
     .then(res => {
-      console.log(res);
+      return Promise.all(res);
     })
+    .then(res => {
+      return res.forEach( person => {
+        console.log(person);
+      })
+    })
+    .catch(err, console.error(err));
 }
 
 fetchPeopleWithPromises();
