@@ -25,4 +25,13 @@ function fetchPeopleWithPromises(){
     .catch(err => console.error(err));
 }
 
-fetchPeopleWithPromises();
+async function fetchPeopleWithAsync(){
+  const everything = await superagent.get(url);
+  const personList = everything.body.results;
+  const justURLs = personList.map(person => person.url);
+  const allPeopleAgain = await justURLs.map( oneURL => superagent.get(oneURL));
+  const promises = await Promise.all(allPeopleAgain);
+  promises.forEach(person => console.log(person.body.name));
+}
+
+fetchPeopleWithAsync();
