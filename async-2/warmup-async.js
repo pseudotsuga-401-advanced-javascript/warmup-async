@@ -34,4 +34,3 @@ async function fetchPeopleWithAsync(){
   promises.forEach(person => console.log(person.body.name));
 }
 
-fetchPeopleWithAsync();
