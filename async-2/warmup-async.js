@@ -6,8 +6,17 @@ function fetchPeopleWithPromises(){
   superagent.get(url)
     .then(res => {
       return res.body.results.map( person => {
-        person.url;
+        return person.url;
+      });
+    })
+    .then(res => {
+      return res.map( oneURL => {
+        return superagent.get(oneURL);
       })
     })
-    .then()
+    .then(res => {
+      console.log(res);
+    })
 }
+
+fetchPeopleWithPromises();
