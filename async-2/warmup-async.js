@@ -19,10 +19,10 @@ function fetchPeopleWithPromises(){
     })
     .then(res => {
       return res.forEach( person => {
-        console.log(person);
+        console.log(person.body.name);
       })
     })
-    .catch(err, console.error(err));
+    .catch(err => console.error(err));
 }
 
 fetchPeopleWithPromises();
